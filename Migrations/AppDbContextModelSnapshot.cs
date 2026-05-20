@@ -56,50 +56,6 @@ namespace SistemaBodega.Migrations
                     b.ToTable("admin_users", (string)null);
                 });
 
-            modelBuilder.Entity("MiApi.Entities.AuditoriaOperacion", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Accion")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("accion");
-
-                    b.Property<int>("AdminUserId")
-                        .HasColumnType("integer")
-                        .HasColumnName("admin_user_id");
-
-                    b.Property<string>("Detalles")
-                        .HasColumnType("text")
-                        .HasColumnName("detalles");
-
-                    b.Property<string>("EntidadAfectada")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("entidad_afectada");
-
-                    b.Property<int?>("EntidadId")
-                        .HasColumnType("integer")
-                        .HasColumnName("entidad_id");
-
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("fecha");
-
-                    b.HasKey("Id")
-                        .HasName("pk_auditorias");
-
-                    b.HasIndex("AdminUserId")
-                        .HasDatabaseName("ix_auditorias_admin_user_id");
-
-                    b.ToTable("auditorias", (string)null);
-                });
-
             modelBuilder.Entity("MiApi.Entities.Cliente", b =>
                 {
                     b.Property<int>("Id")
@@ -338,18 +294,6 @@ namespace SistemaBodega.Migrations
                         .HasDatabaseName("ix_tipos_cafe_nombre");
 
                     b.ToTable("tipos_cafe", (string)null);
-                });
-
-            modelBuilder.Entity("MiApi.Entities.AuditoriaOperacion", b =>
-                {
-                    b.HasOne("MiApi.Entities.AdminUser", "AdminUser")
-                        .WithMany()
-                        .HasForeignKey("AdminUserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
-                        .HasConstraintName("fk_auditorias_admin_users_admin_user_id");
-
-                    b.Navigation("AdminUser");
                 });
 
             modelBuilder.Entity("MiApi.Entities.Inventario", b =>

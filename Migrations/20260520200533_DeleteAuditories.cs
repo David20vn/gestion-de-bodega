@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace SistemaBodega.Migrations
 {
     /// <inheritdoc />
-    public partial class AgregarEntidadesSistemaCafe : Migration
+    public partial class DeleteAuditories : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -70,30 +70,6 @@ namespace SistemaBodega.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("pk_tipos_cafe", x => x.id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "auditorias",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    admin_user_id = table.Column<int>(type: "integer", nullable: false),
-                    accion = table.Column<string>(type: "text", nullable: false),
-                    entidad_afectada = table.Column<string>(type: "text", nullable: false),
-                    entidad_id = table.Column<int>(type: "integer", nullable: true),
-                    fecha = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    detalles = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("pk_auditorias", x => x.id);
-                    table.ForeignKey(
-                        name: "fk_auditorias_admin_users_admin_user_id",
-                        column: x => x.admin_user_id,
-                        principalTable: "admin_users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -216,11 +192,6 @@ namespace SistemaBodega.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "ix_auditorias_admin_user_id",
-                table: "auditorias",
-                column: "admin_user_id");
-
-            migrationBuilder.CreateIndex(
                 name: "ix_clientes_nombre",
                 table: "clientes",
                 column: "nombre",
@@ -293,9 +264,6 @@ namespace SistemaBodega.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "auditorias");
-
             migrationBuilder.DropTable(
                 name: "inventarios");
 
