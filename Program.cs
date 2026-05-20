@@ -49,12 +49,18 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
+builder.Services.AddScoped<IInventarioService, InventarioService>();
+builder.Services.AddScoped<ITipoCafeRepository, TipoCafeRepository>();
+builder.Services.AddScoped<ITipoCafeService, TipoCafeService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Semillas
 
 // Semilla de usuario administrador
 using (var scope = app.Services.CreateScope())
@@ -68,6 +74,23 @@ using (var scope = app.Services.CreateScope())
             PasswordHash = BCrypt.Net.BCrypt.HashPassword("Admin123!")
         };
         context.AdminUsers.Add(admin);
+        context.SaveChanges();
+    }
+}
+
+// Semilla de secciones
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+    if (!context.Secciones.Any())
+    {
+        context.Secciones.AddRange(
+            new SeccionAlmacenamiento { Nombre = "Café en grano", Descripcion = "Almacenamiento de café sin moler" },
+            new SeccionAlmacenamiento { Nombre = "Café molido", Descripcion = "Almacenamiento de café molido" },
+            new SeccionAlmacenamiento { Nombre = "Café instantáneo", Descripcion = "Almacenamiento de café soluble" },
+            new SeccionAlmacenamiento { Nombre = "Extracto de café", Descripcion = "Almacenamiento de extracto concentrado" }
+        );
         context.SaveChanges();
     }
 }
