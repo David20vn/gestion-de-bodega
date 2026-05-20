@@ -1,0 +1,134 @@
+# Archivos de configuración con secretos
+appsettings.Development.json
+secrets.json
+
+# Variables de entorno (si usas archivos .env)
+.env
+# Dotnet core build artifacts
+/bin/
+/obj/
+*.user
+*.suo
+*.cache
+*.pidb
+*.psess
+*.sln.docstates
+
+# Visual Studio / VS Code
+/.vs/
+/.vscode/
+*.swp
+*.swo
+*~
+.idea/
+
+# User-specific files
+*.rsuser
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+out/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+!packages/repositories.config
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Logs
+*.log
+*.logs/
+*.htm
+*.html
+logs/
+log/
+
+# Entity Framework
+*.efcore
+
+# Docker
+docker-compose.override.yml
+docker-compose.*.yml
+!docker-compose.yml
+
+# Configuraciones locales de desarrollo
+appsettings.Development.json
+appsettings.Production.json
+*.local.json
+*.secrets.json
+
+# Archivos de usuario de .NET Core
+*.csproj.user
+launchSettings.json
+
+# Archivos temporales
+*.tmp
+*.temp
+*.cache
+*.bak
+*.lck
+
+# Certificados
+*.pem
+*.crt
+*.key
+*.pfx
+*.p12
+
+# Database files
+*.mdf
+*.ldf
+*.db
+*.sqlite
+*.sqlite3
+
+# Resultados de pruebas
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Archivos generados por herramientas
+*.nuget.props
+*.nuget.targets
+*.pubxml.user
+*.pubxml
+*.ps1
+*.cmd
+*.bat
+*.pid
+*.seed
+*.stamp
+
+# Carpeta de publicacion
+/publish/
+
+# System files
+Thumbs.db
+.DS_Store
+Desktop.ini
+ehthumbs.db
+# Archivos de usuario
+*.user
+*.suo
+
+# Herramientas de EF (pueden ser locales, pero normalmente no se versionan)
+# Si quieres mantenerlos fuera:
+# efbundle/
