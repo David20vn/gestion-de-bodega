@@ -1,0 +1,43 @@
+{
+  "info": {
+    "_postman_id": "e8b1e325-c472-4b75-bfaf-fc2e6d0527e1",
+    "name": "Inventory",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36491293",
+    "_collection_link": "https://go.postman.co/collection/36491293-e8b1e325-c472-4b75-bfaf-fc2e6d0527e1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get all",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Get by seccion",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Get by seccion and type",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Register/Update",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}

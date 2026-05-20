@@ -1,0 +1,79 @@
+{
+  "info": {
+    "_postman_id": "5c45bcb8-01e4-46e4-83c4-31cb6335f3e8",
+    "name": "Clients",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36491293",
+    "_collection_link": "https://go.postman.co/collection/36491293-5c45bcb8-01e4-46e4-83c4-31cb6335f3e8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get all",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "put",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3OTMxMjExMSwiaXNzIjoiTWlBcGkiLCJhdWQiOiJNaUFwaVVzdWFyaW9zIn0.kS5NhVBzDhy4kTJbR75M9Unc2_9zOx0AcdrC1QdNuus",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"nombre\": \"Café del Valle Editado\", \"contacto\": \"Carlos López\", \"telefono\": \"999888777\", \"email\": \"nuevo@email.com\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5089/api/clientes/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5089",
+          "path": [
+            "api",
+            "clientes",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "post",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Delete",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Get by id",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
