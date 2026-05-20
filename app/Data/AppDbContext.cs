@@ -15,7 +15,6 @@ public class AppDbContext : DbContext
     public DbSet<Inventario> Inventarios => Set<Inventario>();
     public DbSet<MovimientoEntrada> MovimientosEntrada => Set<MovimientoEntrada>();
     public DbSet<MovimientoSalida> MovimientosSalida => Set<MovimientoSalida>();
-    public DbSet<AuditoriaOperacion> Auditorias => Set<AuditoriaOperacion>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -108,15 +107,6 @@ public class AppDbContext : DbContext
             entity.HasOne(m => m.AdminUser)
                   .WithMany()
                   .HasForeignKey(m => m.AdminUserId)
-                  .OnDelete(DeleteBehavior.Restrict);
-        });
-
-        // ---------- AuditoriaOperacion ----------
-        modelBuilder.Entity<AuditoriaOperacion>(entity =>
-        {
-            entity.HasOne(a => a.AdminUser)
-                  .WithMany()
-                  .HasForeignKey(a => a.AdminUserId)
                   .OnDelete(DeleteBehavior.Restrict);
         });
     }

@@ -53,6 +53,10 @@ builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
 builder.Services.AddScoped<IInventarioService, InventarioService>();
 builder.Services.AddScoped<ITipoCafeRepository, TipoCafeRepository>();
 builder.Services.AddScoped<ITipoCafeService, TipoCafeService>();
+builder.Services.AddScoped<IEntradaRepository, EntradaRepository>();
+builder.Services.AddScoped<IEntradaService, EntradaService>();
+builder.Services.AddScoped<ISalidaRepository, SalidaRepository>();
+builder.Services.AddScoped<ISalidaService, SalidaService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
