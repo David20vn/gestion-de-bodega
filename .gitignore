@@ -56,7 +56,6 @@ packages/
 *.log
 *.logs/
 *.htm
-*.html
 logs/
 log/
 
